@@ -7,6 +7,7 @@ let id = 0
 const counter = reactive({ count: 0 })
 //const greeting = ref('Hello from parent')
 const msg = ref('from parent')
+const titleClass = ref('title')
 const pElementRef = ref(null)
 const message = ref('Hello World!')
 const childMsg = ref('No child msg yet')
@@ -58,7 +59,7 @@ watch(todoId, fetchData)
 <header>
   <input :value="text" @input="onInput">
   <p>{{ text }}</p>
-    <h1 :class="titleClass">Make me black</h1>
+    <h1 :class="titleClass">Make me red as hell</h1>
     <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
@@ -105,7 +106,8 @@ watch(todoId, fetchData)
 header {
   line-height: 1.5;
 }
-
+.title {
+  color: red;}
 .logo {
   display: block;
   margin: 0 auto 2rem;
