@@ -1,16 +1,16 @@
 <script setup>
 import { reactive, ref,computed,onMounted,watch } from 'vue'
 //import HelloWorld from './components/HelloWorld.vue'
-import ChildComp from './components/ChildComp.vue'
+//import ChildComp from './components/ChildComp.vue'
 //import TheWelcome from './components/TheWelcome.vue'
 let id = 0
 const counter = reactive({ count: 0 })
 //const greeting = ref('Hello from parent')
-const msg = ref('from parent')
+//const msg = ref('from parent')
 const titleClass = ref('title')
-const pElementRef = ref(null)
-const message = ref('Hello World!')
-const childMsg = ref('No child msg yet')
+//const pElementRef = ref(null)
+//const message = ref('Hello World!')
+//const childMsg = ref('No child msg yet')
 const count = ref(0)
 const awesome = ref(true)
 const todoId = ref(1)
@@ -46,20 +46,18 @@ newTodo.value = ''}
 function removeTodo(todo) {
   todos.value = todos.value.filter((t) => t !== todo)
 }
-onMounted(() => {
-  pElementRef.value.textContent = 'mounted!'
-})
+
 fetchData()
 watch(todoId, fetchData)
 
 </script>
 
 <template>
-<p ref="pElementRef">hello</p> 
+
 <header>
   <input :value="text" @input="onInput">
   <p>{{ text }}</p>
-    <h1 :class="titleClass">Make me red</h1>
+    <h1 :class="titleClass">Red</h1>
     <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
@@ -67,7 +65,7 @@ watch(todoId, fetchData)
     </div>
   </header>
   <h1>{{ message }}</h1>
-  <p>Count is: {{ counter.count }}</p>
+
   <p>Todo id: {{ todoId }}</p>
   <button @click="todoId++" :disabled="!todoData">Fetch next todo</button>
   <p v-if="!todoData">Loading...</p>
@@ -97,8 +95,8 @@ watch(todoId, fetchData)
   <h1 v-if="awesome">Vue is awesome!</h1>
   <h1 v-else>Oh no 😢</h1>
   
-  <ChildComp>Message: {{ msg }}</ChildComp>
-  <p>{{ childMsg }}</p>
+  
+  
 </template>
 
 
@@ -108,6 +106,7 @@ header {
 }
 .title {
   color: red;}
+  
 .logo {
   display: block;
   margin: 0 auto 2rem;
