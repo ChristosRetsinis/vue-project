@@ -1,8 +1,8 @@
 <script setup>
 import { reactive, ref,computed,onMounted,watch } from 'vue'
-import HelloWorld from './components/HelloWorld.vue'
+//import HelloWorld from './components/HelloWorld.vue'
 import ChildComp from './components/ChildComp.vue'
-import TheWelcome from './components/TheWelcome.vue'
+//import TheWelcome from './components/TheWelcome.vue'
 let id = 0
 const counter = reactive({ count: 0 })
 //const greeting = ref('Hello from parent')
@@ -59,11 +59,11 @@ watch(todoId, fetchData)
 <header>
   <input :value="text" @input="onInput">
   <p>{{ text }}</p>
-    <h1 :class="titleClass">Make me red as hell</h1>
+    <h1 :class="titleClass">Make me red</h1>
     <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+      
     </div>
   </header>
   <h1>{{ message }}</h1>
